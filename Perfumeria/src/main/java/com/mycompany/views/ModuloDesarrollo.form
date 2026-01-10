@@ -87,7 +87,7 @@
                     <Column editable="false" title="Perfumista" type="java.lang.Object"/>
                     <Column editable="false" title="Costo Prod" type="java.lang.Object"/>
                     <Column editable="false" title="Costo Venta" type="java.lang.Object"/>
-                    <Column editable="true" title="Estado" type="java.lang.Object"/>
+                    <Column editable="false" title="Estado" type="java.lang.Object"/>
                   </Table>
                 </Property>
               </Properties>

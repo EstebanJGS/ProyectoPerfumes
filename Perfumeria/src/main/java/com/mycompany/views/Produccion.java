@@ -49,15 +49,26 @@ public class Produccion extends javax.swing.JPanel {
             new String [] {
                 "id_Lote", "Perfume", "Cantidad", "Fecha_Inicio", "Estado"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         btn_IniciarProduccion.setText("Iniciar Producción");
+        btn_IniciarProduccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_IniciarProduccion.addActionListener(this::btn_IniciarProduccionActionPerformed);
 
         btn_FinalizarLote.setText("Finalizar Lote");
+        btn_FinalizarLote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btn_EvaluarCalidad.setText("Evaluar Lote");
+        btn_EvaluarCalidad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_EvaluarCalidad.addActionListener(this::btn_EvaluarCalidadActionPerformed);
 
         javax.swing.GroupLayout panel_BgProduccionLayout = new javax.swing.GroupLayout(panel_BgProduccion);

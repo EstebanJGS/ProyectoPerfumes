@@ -27,18 +27,159 @@ public class Inventario extends javax.swing.JPanel {
     private void initComponents() {
 
         panel_BgInventario = new javax.swing.JPanel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        panel_TPInventario = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tabla_Inventario = new javax.swing.JTable();
+        btn_RegistrarInventario = new javax.swing.JButton();
+        btn_AjusteManual = new javax.swing.JButton();
+        btn_BuscarProducto = new javax.swing.JButton();
+        panel_TPProveedores = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla_Proveedores = new javax.swing.JTable();
+        btn_RegistrarProveedor = new javax.swing.JButton();
+        btn_BuscarProveedor = new javax.swing.JButton();
+        btn_ModificarProveedor = new javax.swing.JButton();
+        btn_EliminarProveedor = new javax.swing.JButton();
 
         panel_BgInventario.setBackground(new java.awt.Color(255, 255, 255));
+
+        tabla_Inventario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Tipo_Producto", "Unidad_Medida", "Costo_Unitario", "Stock", "Punto_Reorden"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tabla_Inventario);
+
+        btn_RegistrarInventario.setText("Registrar Entrada");
+        btn_RegistrarInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btn_AjusteManual.setText("Ajuste Manual");
+        btn_AjusteManual.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btn_BuscarProducto.setText("Buscar");
+        btn_BuscarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_BuscarProducto.addActionListener(this::btn_BuscarProductoActionPerformed);
+
+        javax.swing.GroupLayout panel_TPInventarioLayout = new javax.swing.GroupLayout(panel_TPInventario);
+        panel_TPInventario.setLayout(panel_TPInventarioLayout);
+        panel_TPInventarioLayout.setHorizontalGroup(
+            panel_TPInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+            .addGroup(panel_TPInventarioLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(btn_RegistrarInventario)
+                .addGap(18, 18, 18)
+                .addComponent(btn_AjusteManual)
+                .addGap(34, 34, 34)
+                .addComponent(btn_BuscarProducto)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel_TPInventarioLayout.setVerticalGroup(
+            panel_TPInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_TPInventarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panel_TPInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_RegistrarInventario)
+                    .addComponent(btn_AjusteManual)
+                    .addComponent(btn_BuscarProducto))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Inventario", panel_TPInventario);
+
+        tabla_Proveedores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id_Proveedor", "Nombre", "Tipo_Insumo", "Dirección", "Teléfono", "Cond_Pago", "Calificación"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tabla_Proveedores);
+
+        btn_RegistrarProveedor.setText("Registrar");
+        btn_RegistrarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btn_BuscarProveedor.setText("Buscar");
+        btn_BuscarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btn_ModificarProveedor.setText("Modificar");
+        btn_ModificarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        btn_EliminarProveedor.setText("Eliminar");
+        btn_EliminarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_EliminarProveedor.addActionListener(this::btn_EliminarProveedorActionPerformed);
+
+        javax.swing.GroupLayout panel_TPProveedoresLayout = new javax.swing.GroupLayout(panel_TPProveedores);
+        panel_TPProveedores.setLayout(panel_TPProveedoresLayout);
+        panel_TPProveedoresLayout.setHorizontalGroup(
+            panel_TPProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+            .addGroup(panel_TPProveedoresLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(btn_RegistrarProveedor)
+                .addGap(33, 33, 33)
+                .addComponent(btn_BuscarProveedor)
+                .addGap(44, 44, 44)
+                .addComponent(btn_ModificarProveedor)
+                .addGap(45, 45, 45)
+                .addComponent(btn_EliminarProveedor)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel_TPProveedoresLayout.setVerticalGroup(
+            panel_TPProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_TPProveedoresLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panel_TPProveedoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_RegistrarProveedor)
+                    .addComponent(btn_BuscarProveedor)
+                    .addComponent(btn_ModificarProveedor)
+                    .addComponent(btn_EliminarProveedor))
+                .addGap(0, 43, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Proveedores", panel_TPProveedores);
 
         javax.swing.GroupLayout panel_BgInventarioLayout = new javax.swing.GroupLayout(panel_BgInventario);
         panel_BgInventario.setLayout(panel_BgInventarioLayout);
         panel_BgInventarioLayout.setHorizontalGroup(
             panel_BgInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         panel_BgInventarioLayout.setVerticalGroup(
             panel_BgInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -53,8 +194,30 @@ public class Inventario extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_EliminarProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarProveedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_EliminarProveedorActionPerformed
+
+    private void btn_BuscarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BuscarProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_BuscarProductoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_AjusteManual;
+    private javax.swing.JButton btn_BuscarProducto;
+    private javax.swing.JButton btn_BuscarProveedor;
+    private javax.swing.JButton btn_EliminarProveedor;
+    private javax.swing.JButton btn_ModificarProveedor;
+    private javax.swing.JButton btn_RegistrarInventario;
+    private javax.swing.JButton btn_RegistrarProveedor;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JPanel panel_BgInventario;
+    private javax.swing.JPanel panel_TPInventario;
+    private javax.swing.JPanel panel_TPProveedores;
+    private javax.swing.JTable tabla_Inventario;
+    private javax.swing.JTable tabla_Proveedores;
     // End of variables declaration//GEN-END:variables
 }

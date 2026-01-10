@@ -4,6 +4,8 @@
  */
 package com.mycompany.views;
 
+import com.mycompany.perfumeria.Estructura;
+
 /**
  *
  * @author herna
@@ -63,9 +65,11 @@ public class GestionUsuarios extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tabla_Usuarios);
 
         btn_CrearUsuario.setText("Crear Usuario");
+        btn_CrearUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_CrearUsuario.addActionListener(this::btn_CrearUsuarioActionPerformed);
 
         btn_BuscarUsuario.setText("Buscar Usuario");
+        btn_BuscarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btn_ModificarUsuario.setText("Modificar Usuario");
         btn_ModificarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -120,6 +124,7 @@ public class GestionUsuarios extends javax.swing.JPanel {
 
     private void btn_CrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CrearUsuarioActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btn_CrearUsuarioActionPerformed
 
     private void btn_ModificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModificarUsuarioActionPerformed

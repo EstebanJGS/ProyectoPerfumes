@@ -6,7 +6,13 @@ package com.mycompany.perfumeria;
 
 import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.FlatMaterialDesignDarkIJTheme;
+import com.mycompany.views.Facturas;
+import com.mycompany.views.GestionUsuarios;
 import com.mycompany.views.Inicio;
+import com.mycompany.views.Inventario;
+import com.mycompany.views.ModuloDesarrollo;
+import com.mycompany.views.Produccion;
+import com.mycompany.views.Ventas;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -89,6 +95,7 @@ public class Estructura extends javax.swing.JFrame {
 
         btn_Inicio.setText("Inicio");
         btn_Inicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Inicio.addActionListener(this::btn_InicioActionPerformed);
 
         btn_ModuloDesarrollo.setText("Módulo de Desarrollo");
         btn_ModuloDesarrollo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -96,15 +103,19 @@ public class Estructura extends javax.swing.JFrame {
 
         btn_Inventario.setText("Inventario");
         btn_Inventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Inventario.addActionListener(this::btn_InventarioActionPerformed);
 
         btn_Facturacion.setText("Facturación");
         btn_Facturacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Facturacion.addActionListener(this::btn_FacturacionActionPerformed);
 
         btn_GestionUsuarios.setText("Gestión de Usuarios");
         btn_GestionUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_GestionUsuarios.addActionListener(this::btn_GestionUsuariosActionPerformed);
 
         btn_Ventas.setText("Ventas");
         btn_Ventas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_Ventas.addActionListener(this::btn_VentasActionPerformed);
 
         btn_Produccion.setText("Producción");
         btn_Produccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -225,11 +236,36 @@ public class Estructura extends javax.swing.JFrame {
 
     private void btn_ModuloDesarrolloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ModuloDesarrolloActionPerformed
         // TODO add your handling code here:
+        showJPanel(new ModuloDesarrollo()); 
     }//GEN-LAST:event_btn_ModuloDesarrolloActionPerformed
 
     private void btn_ProduccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProduccionActionPerformed
         // TODO add your handling code here:
+        showJPanel(new Produccion()); 
     }//GEN-LAST:event_btn_ProduccionActionPerformed
+
+    private void btn_InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InicioActionPerformed
+        showJPanel(new Inicio()); 
+    }//GEN-LAST:event_btn_InicioActionPerformed
+
+    private void btn_GestionUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GestionUsuariosActionPerformed
+        showJPanel(new GestionUsuarios()); 
+    }//GEN-LAST:event_btn_GestionUsuariosActionPerformed
+
+    private void btn_InventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_InventarioActionPerformed
+        // TODO add your handling code here:
+        showJPanel(new Inventario()); 
+    }//GEN-LAST:event_btn_InventarioActionPerformed
+
+    private void btn_VentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VentasActionPerformed
+        // TODO add your handling code here:
+        showJPanel(new Ventas()); 
+    }//GEN-LAST:event_btn_VentasActionPerformed
+
+    private void btn_FacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_FacturacionActionPerformed
+        // TODO add your handling code here:
+        showJPanel(new Facturas()); 
+    }//GEN-LAST:event_btn_FacturacionActionPerformed
 
     /**
      * @param args the command line arguments
